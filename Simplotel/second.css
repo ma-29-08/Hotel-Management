@@ -1,0 +1,124 @@
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make sure the body covers the full viewport height */
+    background: linear-gradient(to top left, rgb(241, 45, 162,0.7), rgba(246, 238, 5, 0.3));
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .image-grid {
+    --gap: 16px;
+    --num-cols: 2;
+    --row-height: 200px;
+    --width:4%;
+  
+    box-sizing: border-box;
+    padding: var(--gap);
+  
+    display: grid;
+  
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+    gap:var(--width);
+  }
+  
+  .image-grid>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  
+  .image-grid-rows-2 {
+    grid-row: span 2;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    /*border: 2px solid #ccc; /* Adding border */
+    margin-left: 20px; /* Adjust margin as needed */
+    background-color: #fd7575;
+    max-width: 400px;
+    font-family:monospace;
+    font-size: 25px;
+    max-height: 400px;
+  }
+  
+  .content img {
+    width: 20px; /* Set the width of the icon */
+    height: 20px; /* Set the height of the icon */
+    
+  }
+  
+  #icon-container {
+    display: inline-block; /* Ensure the icon container doesn't break the line */
+    vertical-align: middle; /* Align the icon vertically with the text */
+    margin-left: 5px; /* Adjust the space between the text and the icon */
+    font-family: Arial, sans-serif;
+   
+  }
+  #icon-container img {
+    width: 25px; /* Adjust the width of the icon */
+    height: 25px; /* Adjust the height of the icon */
+}
+  p{
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  h1{
+    margin-top: 15px;
+    letter-spacing: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    /* Adjustments for tablets */
+    .image-grid {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust grid columns for smaller screens */
+    }
+    
+    .content {
+      padding: 10px; /* Adjust padding for smaller screens */
+      max-width: 100%; /* Full width for content on smaller screens */
+      font-size: 20px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Adjustments for mobile phones */
+    .image-grid {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjust grid columns for smaller screens */
+    }
+    
+    .content {
+      padding: 5px; /* Adjust padding for smaller screens */
+      font-size: 16px; /* Adjust font size for smaller screens */
+      max-width: 50%;
+    }
+  }
+  
+
+  /* @media screen and (max-width: 1024px) {
+    .image-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid columns for smaller screens */
+    /*}
+  
+    .content {
+      max-width: 100%; /* Full width for content on smaller screens */
+   /* }
+  } */
+
+  
